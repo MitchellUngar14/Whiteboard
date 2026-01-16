@@ -1,17 +1,107 @@
-# React + Vite
+# 📝 Digital Whiteboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, highly interactive digital whiteboard for managing tasks and notes. Designed for productivity with a sleek, glassmorphic aesthetic.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **✅ Tasks & Notes**: Effortlessly create task cards or yellow sticky notes to organize your thoughts.
+- **🖊️ Rich Text Support**: Full WYSIWYG editing.
+  - **Bold**, <u>Underline</u>, Bullet Lists, and `Code Blocks` supported.
+- **🚀 Advanced Interactions**:
+  - **Drag & Drop**: Smooth, hardware-accelerated movement on both desktop and mobile devices.
+  - **Smart Resizing**: Resize any card by dragging its corner. The card's height automatically respects its content, preventing text from ever being cut off.
+  - **Radial Context Menu**: A premium radial menu that fans out on right-click or long-press, letting you pick colors, manage layers (Bring to Front/Back), or delete cards.
+- **🌓 Theme System**: Seamlessly switch between a high-contrast Neon Dark mode and a refined, deep-toned Light mode.
+- **📱 PWA Ready**: Install the app directly to your home screen. Fully offline capable with high-performance caching.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Whiteboard
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: Vanilla CSS (Global variables, CSS Modules architecture)
+- **Persistence**: IndexedDB (via lightweight custom store)
+- **Offline**: [vite-plugin-pwa](https://github.com/vite-pwa/vite-plugin-pwa)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [npm](https://www.npmjs.com/)
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/your-username/whiteboard.git
+   ```
+2. Navigate to the project directory
+   ```bash
+   cd whiteboard
+   ```
+3. Install dependencies
+   ```bash
+   npm install
+   ```
+
+### Development
+
+Run the development server locally:
+```bash
+npm run dev
+```
+
+### Build
+
+Create a production-ready build:
+```bash
+npm run build
+```
+
+---
+
+## 📱 Mobile Installation
+
+This app is optimized as a PWA. To install it on your device:
+
+### iOS
+1. Open the app in Safari
+2. Tap the Share button
+3. Select "Add to Home Screen"
+
+### Android / Desktop
+1. Open the app in Chrome
+2. Tap the three dots menu
+3. Select "Install App"
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## ⚖️ License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<p align="center">
+  Made with ❤️ and ☕
+</p>
+
+---

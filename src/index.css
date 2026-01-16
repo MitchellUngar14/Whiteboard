@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* HSL Color Palette - Dark Default */
+  --hue-primary: 250;
+  /* Deep Blurple */
+  --hue-success: 150;
+  --hue-warning: 35;
+  --hue-danger: 0;
+
+  --bg-1: hsl(220, 20%, 10%);
+  --bg-2: hsl(220, 20%, 14%);
+  --bg-3: hsl(220, 20%, 18%);
+
+  --text-1: hsl(220, 20%, 95%);
+  --text-2: hsl(220, 15%, 70%);
+  --text-3: hsl(220, 15%, 50%);
+
+  --primary: hsl(var(--hue-primary), 70%, 60%);
+  --primary-glow: hsl(var(--hue-primary), 70%, 60%, 0.3);
+
+  /* Task Colors */
+  --task-blue-bg: hsl(210, 30%, 20%);
+  --task-blue-text: hsl(210, 80%, 80%);
+
+  --task-green-bg: hsl(150, 30%, 20%);
+  --task-green-text: hsl(150, 80%, 80%);
+
+  --task-pink-bg: hsl(330, 30%, 20%);
+  --task-pink-text: hsl(330, 80%, 80%);
+
+  /* Spacing & Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  --font-main: 'Outfit', sans-serif;
+}
+
+[data-theme="light"] {
+  --bg-1: hsl(220, 20%, 98%);
+  --bg-2: hsl(220, 20%, 94%);
+  --bg-3: hsl(220, 20%, 90%);
+
+  --text-1: hsl(220, 20%, 10%);
+  --text-2: hsl(220, 15%, 40%);
+  --text-3: hsl(220, 15%, 60%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-1);
+  color: var(--text-1);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+  /* For whiteboard feel */
+  overscroll-behavior: none;
+  /* Prevent pull-to-refresh on mobile */
+  touch-action: none;
+  /* Disable default touch actions to let JS handle drag */
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-1), var(--text-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Responsive Utilities */
+@media (max-width: 600px) {
+  .header-title {
+    font-size: 1.5rem !important;
+  }
+
+  .btn-text-full {
+    display: none;
+  }
+
+  .btn-text-short {
+    display: inline !important;
+  }
+
+  .theme-toggle-text {
+    display: none;
+  }
+
+  header {
+    margin-bottom: 16px !important;
+  }
+}
+
+.btn-text-short {
+  display: none;
+}
