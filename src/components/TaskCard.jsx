@@ -134,13 +134,19 @@ export function TaskCard({ task, onUpdate, onDelete, onEdit, onContextMenu }) {
         const dx = e.clientX - resizeStart.current.x;
         const dy = e.clientY - resizeStart.current.y;
 
-        const minHeight = cardRef.current ? cardRef.current.scrollHeight : 150;
+        const minBaseHeight = isNote ? 80 : 80;
         const newWidth = Math.max(200, initialSize.current.w + dx);
-        const newHeight = Math.max(minHeight, initialSize.current.h + dy);
+        let newHeight = Math.max(minBaseHeight, initialSize.current.h + dy);
 
         if (cardRef.current) {
             cardRef.current.style.width = `${newWidth}px`;
             cardRef.current.style.height = `${newHeight}px`;
+
+            // Check for content overflow and snap to scrollHeight
+            if (cardRef.current.scrollHeight > cardRef.current.offsetHeight) {
+                newHeight = cardRef.current.scrollHeight;
+                cardRef.current.style.height = `${newHeight}px`;
+            }
         }
     };
 
@@ -179,13 +185,19 @@ export function TaskCard({ task, onUpdate, onDelete, onEdit, onContextMenu }) {
         const dx = touch.clientX - resizeStart.current.x;
         const dy = touch.clientY - resizeStart.current.y;
 
-        const minHeight = cardRef.current ? cardRef.current.scrollHeight : 150;
+        const minBaseHeight = isNote ? 80 : 80;
         const newWidth = Math.max(200, initialSize.current.w + dx);
-        const newHeight = Math.max(minHeight, initialSize.current.h + dy);
+        let newHeight = Math.max(minBaseHeight, initialSize.current.h + dy);
 
         if (cardRef.current) {
             cardRef.current.style.width = `${newWidth}px`;
             cardRef.current.style.height = `${newHeight}px`;
+
+            // Check for content overflow and snap to scrollHeight
+            if (cardRef.current.scrollHeight > cardRef.current.offsetHeight) {
+                newHeight = cardRef.current.scrollHeight;
+                cardRef.current.style.height = `${newHeight}px`;
+            }
         }
     };
 
@@ -211,7 +223,7 @@ export function TaskCard({ task, onUpdate, onDelete, onEdit, onContextMenu }) {
         top: task.y,
         width: task.width ? `${task.width}px` : (isNote ? '240px' : '300px'),
         height: task.height ? `${task.height}px` : 'auto',
-        minHeight: isNote ? '240px' : 'auto',
+        minHeight: isNote ? '80px' : 'auto',
         backgroundColor: isNote ? (task.color || '#f1c40f') : 'var(--bg-2)', // Yellow default for notes
         borderRadius: isNote ? '2px' : 'var(--radius-md)',
         boxShadow: isDragging || isResizing ? 'var(--shadow-lg)' : 'var(--shadow-sm)',
