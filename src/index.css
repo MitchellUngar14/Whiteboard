@@ -123,3 +123,24 @@ button {
 .btn-text-short {
   display: none;
 }
+
+/* Dropdown menu styles */
+.create-dropdown {
+  animation: dropdownFadeIn 0.15s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image card hover actions */
+.image-card:hover .actions {
+  opacity: 1;
+}
